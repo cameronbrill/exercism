@@ -1,10 +1,11 @@
 class AssemblyLine
+  CARS_PER_HOUR = 221
   def initialize(speed)
     @speed = speed
   end
 
   def production_rate_per_hour
-    rate = 221 * @speed
+    rate = CARS_PER_HOUR * @speed
 
     case @speed
     when 5..8
