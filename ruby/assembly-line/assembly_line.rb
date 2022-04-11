@@ -4,10 +4,21 @@ class AssemblyLine
   end
 
   def production_rate_per_hour
-    raise 'Please implement the AssemblyLine#production_rate_per_hour method'
+    rate = 221 * @speed
+
+    case @speed
+    when 5..8
+      rate *= 0.9
+    when 9
+      rate *= 0.8
+    when 10
+      rate *= 0.77
+    end
+
+    return rate
   end
 
   def working_items_per_minute
-    raise 'Please implement the AssemblyLine#working_items_per_minute method'
+    return (production_rate_per_hour / 60).to_i 
   end
 end
